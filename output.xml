@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.2 on win32)" generated="2024-10-22T20:24:19.379121" rpa="false" schemaversion="5">
+<suite id="s1" name="validarProduto" source="d:\projetos\CNAB\tests\validarProduto.robot">
+<test id="s1-t1" name="Validar Produto Conhecido no Arquivo CNAB 240" line="9">
+<kw name="Validar Produto" owner="cnab_keywords">
+<msg time="2024-10-22T20:24:19.399638" level="INFO">${resultado} = True</msg>
+<msg time="2024-10-22T20:24:19.399638" level="INFO">${mensagem} = Todos os produtos são conhecidos.</msg>
+<var>${resultado}</var>
+<var>${mensagem}</var>
+<arg>${CAMINHO_ARQUIVO}</arg>
+<arg>@{PRODUTOS_CONHECIDOS}</arg>
+<status status="PASS" start="2024-10-22T20:24:19.399638" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-22T20:24:19.399638" level="INFO">Todos os produtos são conhecidos.</msg>
+<arg>${mensagem}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-22T20:24:19.399638" elapsed="0.000000"/>
+</kw>
+<arg>${resultado} == True</arg>
+<arg>Log</arg>
+<arg>${mensagem}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-22T20:24:19.399638" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${resultado} == False</arg>
+<arg>Fail</arg>
+<arg>${mensagem}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-22T20:24:19.399638" elapsed="0.000000"/>
+</kw>
+<doc>Este teste valida se os produtos no arquivo CNAB 240 são conhecidos.</doc>
+<status status="PASS" start="2024-10-22T20:24:19.399638" elapsed="0.000000"/>
+</test>
+<status status="PASS" start="2024-10-22T20:24:19.383125" elapsed="0.016513"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="validarProduto">validarProduto</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
