@@ -104,21 +104,15 @@ def validar_produto(caminho_arquivo, produtos_conhecidos):
 
 
 
-
-
-# cnab_keywords.py
-# cnab_keywords.py
-
 def validar_produto_desconhecido(caminho_arquivo, produtos_conhecidos):
     try:
         with open(caminho_arquivo, 'r') as arquivo:
             linhas = arquivo.readlines()
             produtos_desconhecidos = []
-            
             # Itera sobre as linhas do arquivo (pulando o header)
             for linha in linhas[2:]:  # Começa na linha 1, supondo que a linha 0 é o header
-                # Aqui você precisa adaptar a extração do produto de acordo com a estrutura do arquivo
-                produto = linha[13:14].strip()  # Supondo que o código do produto está nas posições 15 a 20
+                
+                produto = linha[13:14].strip()  
 
                 if produto not in produtos_conhecidos:
                     produtos_desconhecidos.append(produto)
@@ -132,3 +126,23 @@ def validar_produto_desconhecido(caminho_arquivo, produtos_conhecidos):
             return True, 'Todos os produtos são conhecidos.'
     except Exception as e:
         return False, f"Erro ao ler o arquivo: {str(e)}"
+
+
+
+def validar_sentido_cnab(caminho_arquivo):
+    with open(caminho_arquivo, 'r') as arquivo:
+        linha_header = arquivo.readline().strip()
+        
+        # Verifica se a linha tem o mínimo de caracteres para acessar as posições 143-144
+        if len(linha_header) < 144:
+            return False, "Linha de header incompleta."
+
+        # Extrai os caracteres nas posições 
+        sentido = linha_header[142:143]
+
+        if sentido == '2':
+            return True, "O arquivo é de Retorno."
+        elif sentido == '1':
+            return True, "O arquivo é de Remessa."
+        else:
+            return False, "Sentido do arquivo desconhecido: valor inesperado no campo 143-144."

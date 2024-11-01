@@ -1,46 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.12.2 on win32)" generated="2024-10-22T20:36:41.255677" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.12.2 on win32)" generated="2024-11-01T13:36:41.493486" rpa="false" schemaversion="5">
 <suite id="s1" name="CNAB" source="D:\projetos\CNAB">
 <suite id="s1-s1" name="Tests" source="D:\projetos\CNAB\tests">
-<suite id="s1-s1-s1" name="validaProdutoDesconhecido" source="D:\projetos\CNAB\tests\validaProdutoDesconhecido.robot">
-<test id="s1-s1-s1-t1" name="Validar Produtos Desconhecidos no Arquivo CNAB 240" line="9">
-<kw name="Validar Produto Desconhecido" owner="cnab_keywords">
-<msg time="2024-10-22T20:36:41.291570" level="INFO">${resultado} = True</msg>
-<msg time="2024-10-22T20:36:41.292569" level="INFO">${mensagem} = Todos os produtos são conhecidos.</msg>
+<suite id="s1-s1-s1" name="sentidoArquivo" source="D:\projetos\CNAB\tests\sentidoArquivo.robot">
+<test id="s1-s1-s1-t1" name="Validar Sentido do Arquivo CNAB 240" line="8">
+<kw name="Validar Sentido Cnab" owner="cnab_keywords">
+<msg time="2024-11-01T13:36:41.519488" level="INFO">${resultado} = True</msg>
+<msg time="2024-11-01T13:36:41.519488" level="INFO">${mensagem} = O arquivo é de Retorno.</msg>
 <var>${resultado}</var>
 <var>${mensagem}</var>
 <arg>${CAMINHO_ARQUIVO}</arg>
-<arg>@{PRODUTOS_CONHECIDOS}</arg>
-<status status="PASS" start="2024-10-22T20:36:41.291570" elapsed="0.000999"/>
+<status status="PASS" start="2024-11-01T13:36:41.518488" elapsed="0.001000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-22T20:36:41.293569" level="INFO">Todos os produtos são conhecidos. Não há produtos desconhencidos</msg>
-<arg>${mensagem} Não há produtos desconhencidos</arg>
+<msg time="2024-11-01T13:36:41.520486" level="INFO">O arquivo é de Retorno.</msg>
+<arg>${mensagem}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-22T20:36:41.292569" elapsed="0.001000"/>
+<status status="PASS" start="2024-11-01T13:36:41.520486" elapsed="0.001002"/>
 </kw>
 <arg>${resultado} == True</arg>
 <arg>Log</arg>
-<arg>${mensagem} Não há produtos desconhencidos</arg>
+<arg>${mensagem}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-10-22T20:36:41.292569" elapsed="0.001000"/>
+<status status="PASS" start="2024-11-01T13:36:41.520486" elapsed="0.001002"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>${resultado} == False</arg>
 <arg>Fail</arg>
-<arg>${mensagem} Produto desconhencido na coluna 14</arg>
+<arg>${mensagem}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-10-22T20:36:41.293569" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-01T13:36:41.521488" elapsed="0.000000"/>
 </kw>
-<doc>Este teste verifica se há produtos desconhecidos no arquivo CNAB 240.</doc>
-<status status="PASS" start="2024-10-22T20:36:41.290571" elapsed="0.002998"/>
+<doc>Este teste verifica se o sentido do arquivo CNAB é Retorno ou Remessa.</doc>
+<status status="PASS" start="2024-11-01T13:36:41.518488" elapsed="0.003000"/>
 </test>
-<status status="PASS" start="2024-10-22T20:36:41.287570" elapsed="0.006999"/>
+<status status="PASS" start="2024-11-01T13:36:41.514490" elapsed="0.007996"/>
 </suite>
-<status status="PASS" start="2024-10-22T20:36:41.285819" elapsed="0.009751"/>
+<status status="PASS" start="2024-11-01T13:36:41.513488" elapsed="0.010999"/>
 </suite>
-<status status="PASS" start="2024-10-22T20:36:41.269810" elapsed="0.026760"/>
+<status status="PASS" start="2024-11-01T13:36:41.496485" elapsed="0.029003"/>
 </suite>
 <statistics>
 <total>
@@ -51,7 +50,7 @@
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="CNAB">CNAB</stat>
 <stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">CNAB.Tests</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="validaProdutoDesconhecido">CNAB.Tests.validaProdutoDesconhecido</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="sentidoArquivo">CNAB.Tests.sentidoArquivo</stat>
 </suite>
 </statistics>
 <errors>

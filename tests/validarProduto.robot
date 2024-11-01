@@ -3,7 +3,7 @@ Library    D:/projetos/CNAB/resources/cnab_keywords.py
 
 *** Variables ***
 ${CAMINHO_ARQUIVO}        D:/projetos/CNAB/resources/BRFNT.RB40.CCE4.27092024.035556.RET
-@{PRODUTOS_CONHECIDOS}    E    # Troque para R e teste
+@{PRODUTOS_CONHECIDOS}    E    
 
 *** Test Cases ***
 Validar Produto Conhecido no Arquivo CNAB 240
